@@ -229,7 +229,7 @@ var median_time = taskTotalHours / item_count;
   
   var taskListPrint = "";
   for(var l in filtered_taskList) {
-    taskListPrint += " " + m + "-" + filtered_taskList[l] + " hours,";
+    taskListPrint += " " + l + "-" + filtered_taskList[l] + " hours,";
   } 
 
   filteredtext = filteredtext + taskListPrint;
