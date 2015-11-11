@@ -101,18 +101,28 @@ var main = function() {
               10      20
              / \     /  \
             8  12   16  25    */
+    // var root = new BST(15);
+    // root.left = new BST(10);
+    // root.right = new BST(20);
+    // root.left.left = new BST(8);
+    // root.left.right = new BST(12);
+    // root.right.left = new BST(16);
+    // root.right.right = new BST(25);
+
+
     var root = new BST(15);
-    root.left = new BST(10);
-    root.right = new BST(20);
-    root.left.left = new BST(8);
-    root.left.right = new BST(12);
-    root.right.left = new BST(16);
-    root.right.right = new BST(25);
+    root = root.insert(10);
+    root = root.insert(20);
+    root = root.insert(8);
+    root = root.insert(12);
+    root = root.insert(16);
+    root = root.insert(25);
+
 
 
 
     var target = 33;
-    var ret = root.pairSum(target));
+    var ret = root.pairSum(target);
 		if(ret.length === 0) {
 			console.log("Pair not found with target");
 		}
