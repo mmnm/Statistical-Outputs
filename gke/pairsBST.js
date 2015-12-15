@@ -9,6 +9,24 @@ var BST = function(val) {
 
 BST.prototype.constructor = BST;
 
+BST.prototype.inorder = function(val) {
+
+	var cur = this;
+	if(cur === undefined || cur === null) {
+		return;
+	}
+	if(cur.left) {
+		cur.left.inorder();
+	}
+
+	console.log(" ", cur.value);
+	if(cur.right) {
+		cur.right.inorder();
+	}
+}
+
+
+
 BST.prototype.insert = function(val) {
 
 	var temp = root = this;
@@ -55,6 +73,7 @@ BST.prototype.printInorderTree = function() {
 
 
 BST.prototype.pairSum = function(target) {
+	// debugger;
 
 	var root = this;
 	if(root === null) {
@@ -100,7 +119,7 @@ var main = function() {
                 /     \
               10      20
              / \     /  \
-            8  12   16  25    */
+             8  12   16  25    */
     // var root = new BST(15);
     // root.left = new BST(10);
     // root.right = new BST(20);
@@ -121,15 +140,24 @@ var main = function() {
 
 
 
-    var target = 33;
-    var ret = root.pairSum(target);
-		if(ret.length === 0) {
-			console.log("Pair not found with target");
-		}
-	
- 
-}
+    var target = 40;
+		root.inorder();
 
-main();
+
+    var ret = root.pairSum(target);
+    
+
+    if(ret === undefined) {
+    	console.log("Pair not found with target");
+    } else if(ret.length === 0) {
+    	console.log("Pair not found with target");
+    } else {
+    	console.log("The pair is found");
+    }
+
+
+  }
+
+  main();
 
 

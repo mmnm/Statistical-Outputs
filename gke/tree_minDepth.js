@@ -17,7 +17,6 @@ For example, minimum height of below Binary Tree is 2.
 
 
 
-
 var BT = function(val) {
 	this.value = val;
 	this.left = null;
