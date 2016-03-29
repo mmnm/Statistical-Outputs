@@ -17,6 +17,12 @@ struct stack
 	struct stack *next;
 };
 
+struct queue
+{
+	struct stack *s1 = NULL;
+	struct stack *s2 = NULL;
+};
+
 
 struct stack * newNode(int data)
 {
@@ -66,6 +72,34 @@ void stack_pop(struct stack **head)
 	delete(temp);
 	
 }
+
+
+void queue_push(struct queue **head, int elem)
+{
+	//The element needs to be always inserted in s1.
+
+	stack_push(&((*head)->s1), elem);
+} 
+
+int queue_dequeue(struct queue **head)
+{
+	//Push all elements from s1 to s2 and pop from s2
+
+	while( stack_top( &(*head)->s1 ) != -1)
+	{
+		int cur = stack_top( &(*head)->s1 );
+		stack_push( &(*head)->s2, cur );
+	}
+
+	//Now pop the element from s2 and return
+
+	int retElem = stack_top( &(*head)->s2 );
+
+	return retElem;
+}
+
+
+
 
 
 
@@ -122,5 +156,4 @@ int main()
 
 
 	
-
 
