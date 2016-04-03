@@ -91,7 +91,7 @@ printf("\n");
   if (isSubsetSum(set, n - 1, sum5) == true)
      printf("Found a subset with given sum2 %d", sum5);
   else
-     printf("No subset with given sum %d", sum6);
+     printf("No subset with given sum %d", sum5);
 
 printf("\n");
  if (isSubsetSum(set, n - 1, sum6) == true)
