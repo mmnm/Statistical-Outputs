@@ -90,6 +90,19 @@ void reverse(struct node **head)
 }
 
 
+void reverse_Recursive(struct node *head, struct node *prev, struct node **newHead)
+{
+  if(head == NULL)
+  {
+    *newHead = prev;
+    return;
+  }
+
+  reverse_Recursive(head->next, head, newHead);
+  head->next = prev;
+}
+	
+
 
 /* Driver program to test above function*/
 int main()
@@ -116,5 +129,29 @@ int main()
      printf("\n Reversed Linked list \n");
      printList(head1);    
 
+    /* Test case 3 */
+    cout<<"\nTest case 3"<<endl;
+    struct node* head3 = NULL;
+   
+     push(&head3, 20);
+     push(&head3, 4);
+     push(&head3, 15); 
+     push(&head3, 85);      
+     
+     printList(head3);    
+     reverse_Recursive(head3, NULL, &head3);
+     printf("\n Reversed Linked list \n");
+     printList(head3);    
+  
+     /* Test case 4 */
+
+    cout<<"\nTest case 4"<<endl;
+     struct node* head4 = NULL;
+     push(&head4, 20);
+     printList(head4);    
+     printf("\n Reversed Linked list \n");
+     reverse_Recursive(head4, NULL, &head4);
+     printList(head4);    
      getchar();
+
 }
