@@ -32,7 +32,7 @@ var getMaxProfit = function(stockPricesYesterday) {
 		return null;
 	}
 
-	var maxProfit = 0;
+	var maxProfit = (-Number.MAX_VALUE);
 	var lowestSeenSoFar = stockPricesYesterday[0];
 	
 	for(var i = 1; i < stockPricesYesterday.length; i++) {
