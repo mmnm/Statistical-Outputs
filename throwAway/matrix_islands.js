@@ -104,7 +104,7 @@ var array1 =
 [0, 0, 0, 0, 0],
 [1, 0, 1, 0, 1]
 ];
-
+//Tests
 console.log(findNumberOfIslands(array1));
 
 
