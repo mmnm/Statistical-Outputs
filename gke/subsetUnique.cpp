@@ -11,6 +11,22 @@ Debugging Learnings:
 3. You can update std::map by passing it as a reference variable. 
 	E.g std::map<int, int> m1; callee_function(std::map<int, int> & m) {..}
 
+4. See the usage of vector to store only unique strings
+	std::vector<std::string> v1;
+	std::vector<std::string>::iterator it;
+	std::string s1 = "ab";
+
+	if(find(v1.begin(), v1.end(), s1) != v1.end())
+	{
+		v1.push_back(s1);
+	}
+	//Same with iterator 
+	it = v1.find(s1);
+	if(it != v1.end())
+	{
+		v1.push_back(s1);
+	}	
+
 
 */
 
