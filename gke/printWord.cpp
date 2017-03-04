@@ -21,7 +21,6 @@ Debugging tips:
 Consider the following dictionary 
 { i, like, sam, sung, samsung, mobile, ice, 
   cream, icecream, man, go, mango};
-
 */
 
 
