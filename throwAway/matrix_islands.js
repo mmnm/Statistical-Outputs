@@ -13,7 +13,8 @@ Find the number of islands
 1 1 1 1
 
 
-Algo: we can use dfs or bfs to find the connected components and then increment the count for each of those 
+Algo: we can use dfs or bfs to find the connected components and 
+then increment the count for each of those 
 connected components. Visit only unique components 
 
 */

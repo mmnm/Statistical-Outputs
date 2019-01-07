@@ -24,6 +24,7 @@ var isInDictionary = function(word) {
 
   var dictionary = {};
   dictionary["i"] = true;
+  
   dictionary["like"] = true;
   dictionary["sam"] = true;
   dictionary["sung"] = true;

@@ -33,19 +33,22 @@ var getMaxProfit = function(stockPricesYesterday) {
 	}
 
 	var maxProfit = (-Number.MAX_VALUE);
+	console.log(maxProfit);
 	var lowestSeenSoFar = stockPricesYesterday[0];
-	
+	// debugger;
 	for(var i = 1; i < stockPricesYesterday.length; i++) {
 
 		var curElem = stockPricesYesterday[i];
-		if(lowestSeenSoFar > curElem) {
-			lowestSeenSoFar = curElem;
-		}
+		
 
 		var localMaxSum = curElem - lowestSeenSoFar;
 
 		if(localMaxSum > maxProfit) {
 			maxProfit = localMaxSum;
+		}
+
+		if(lowestSeenSoFar > curElem) {
+			lowestSeenSoFar = curElem;
 		}
 
 	}
@@ -58,8 +61,8 @@ var getMaxProfit = function(stockPricesYesterday) {
 var stockPricesYesterday1 = [10, 7, 5, 8, 11, 9];
 var stockPricesYesterday2 = [10, 7, 5, 4, 3, 1];
 var stockPricesYesterday3 = [1, 5, 7, 8, 9, 11];
-console.log(getMaxProfit(stockPricesYesterday1));
+// console.log(getMaxProfit(stockPricesYesterday1));
 console.log(getMaxProfit(stockPricesYesterday2));
-console.log(getMaxProfit(stockPricesYesterday3));
+// console.log(getMaxProfit(stockPricesYesterday3));
 
 

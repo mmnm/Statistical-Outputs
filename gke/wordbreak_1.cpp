@@ -57,7 +57,8 @@ class Solution {
   }
   
   bool wordBreakUtil(string s, 
-                     std::unordered_set<string> hash, std::unordered_map<string, bool>& wordSplitHash) {
+                     std::unordered_set<string> hash, 
+                     std::unordered_map<string, bool>& wordSplitHash) {
   
   if(wordSplitHash.find(s) != wordSplitHash.end())
   {

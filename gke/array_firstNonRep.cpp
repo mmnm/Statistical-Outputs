@@ -7,6 +7,7 @@ Find first non - rep in O(n) time in one loop iteration only
 
 #include<iostream>
 #include<map>
+#include<unordered_map>
 
 using namespace std;
 
@@ -20,12 +21,12 @@ char findFirstNonRep(char *arr, int len)
 		return -1;
 	}
 
-	std::map<char, int> hashCount;
-	std::map<char, int> hashIsSeenOnce;
+	std::unordered_map<char, int> hashCount;
+	std::unordered_map<char, int> hashIsSeenOnce;
 	std::map<int, char> hashFirstIndexSeen;
 
 
-	std::map<char, int>::iterator it1;
+	std::unordered_map<char, int>::iterator it1;
 	std::map<int, char>::iterator it2;
 
 	for(int i = 0; i < len; i++)
@@ -81,8 +82,10 @@ int main()
 	char string2[] = "TeeksQuiz";
 
 	
-	cout<<findFirstNonRep(string1, sizeof(string1)/sizeof(string1[0]));
-	cout<<findFirstNonRep(string2, sizeof(string2)/sizeof(string2[0]));
+	cout<<findFirstNonRep(string1, sizeof(string1)/
+		sizeof(string1[0]))<<endl;
+	cout<<findFirstNonRep(string2, sizeof(string2)/
+		sizeof(string2[0]))<<endl;
 
 	return 0;
 
