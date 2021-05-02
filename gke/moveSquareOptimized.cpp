@@ -10,7 +10,8 @@ using namespace std;
 Given a sorted array in non-decreasing order, return an array of squares of each number, also in non-decreasing order. For example:
 
 [-4,-2,-1,0,3,5] -> [0,1,4,9,16,25]
-  n         p
+  n
+              p
 
 2, 9
 
@@ -55,51 +56,59 @@ class Solution {
       
   }
   
+  /*
+  [-4,-2,-1,0,3,5] -> [0,1,4,9,16,25]
+                       r_e
+            s
+            e
+  
+  s_p = 0
+  e_p = 0
+              
+              
+              [0,1,4,9,16,25]
+              
+  */
+  
   vector<int> squares_sorted(vector<int> inp) {
     
-    vector<int> res; 
+    vector<int> res = inp; 
     
-    //Error handling 
-    if(inp.size() == 0) {
-      return res;
+    //Ago: 1. Have s and e counters
+    // 2. Keep pushing largest elems to the front
+    // 3. Adjust s and e accordingly 
+    
+    
+    int s = 0; 
+    int e = inp.size() - 1; 
+    int r_e = res.size() - 1; 
+    
+    for(; s <= e; ) {
+      
+      if(s == e) {
+       
+       res[r_e--] = inp[s] * inp[s];
+        s++;
+      } else {
+        
+        int s_p = inp[s] * inp[s];
+        int e_p = inp[e] * inp[e];
+        
+        if(s_p >= e_p) {
+         
+          res[r_e--] = s_p;
+          s++;
+        } else {
+          
+          res[r_e--] = e_p;
+          e--;
+        }
+              
+    }
+  
     }
     
-  
-    int pos_s = findFirstPos(inp);
-    int neg_e = pos_s - 1; 
-    int pos_s_sq = 0;
-    int neg_e_sq = 0; 
-    
-    
-    while(pos_s < inp.size() || neg_e >= 0) {
-      
-      if(pos_s < inp.size() && neg_e >= 0) {
-        
-        pos_s_sq = sq(inp[pos_s]);
-        neg_e_sq = sq(inp[neg_e]);
-        
-        if(pos_s_sq < neg_e_sq) { 
-          res.push_back(pos_s_sq); 
-          pos_s++;
-        } else {
-          res.push_back(neg_e_sq);
-          neg_e--;
-        }
-      } else if(pos_s < inp.size()) {
-        
-          pos_s_sq = sq(inp[pos_s]);
-          res.push_back(pos_s_sq); 
-          pos_s++;
-      
-      } else if(neg_e >= 0) {
-          neg_e_sq = sq(inp[neg_e]);
-          res.push_back(neg_e_sq);
-          neg_e--;
-    
-      }
-    
-  }
-  
+   
   return res; 
     
   }
@@ -135,6 +144,7 @@ int main() {
 
   return 0;
 }
+
 
 
 
