@@ -1,5 +1,5 @@
 #Print all elems in reverse for array Minus the edge elems
-#
+# Tests: Empty, 1 elem
 #!/usr/bin/python3
 
 from typing import List
