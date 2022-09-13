@@ -33,11 +33,6 @@ public:
     //Sort with start
     std::sort(v.begin(), v.end(), myCompareInt);
 
-    //Merge intervals 
-    /*
-      [1,3], [2,5], [7,9] 
-
-    */
     std::vector<Interval> result; 
 
     if(v.size() <= 1) {
@@ -48,12 +43,6 @@ public:
     for(int i = 1; i < v.size(); i++) {
       Interval curVal = v[i];
 
-      //Check if merge is possible 
-      /* 
-[1,3], 
-[2,5]
-
-      */
       //No overlap
       if(prevVal.end < curVal.start) {
         result.push_back(prevVal);
@@ -77,7 +66,6 @@ public:
 
 };
 
-
 void printVIntervals(std::vector<Interval> v) {
   cout<<endl;
   for(int i = 0; i < v.size(); i++) {
@@ -85,9 +73,6 @@ void printVIntervals(std::vector<Interval> v) {
   }
   cout<<endl;
 }
-
-
-
 
 
 int main() {
