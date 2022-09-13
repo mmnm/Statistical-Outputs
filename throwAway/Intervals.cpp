@@ -80,6 +80,17 @@ int main() {
   std::vector<Interval> test1 = {{1,3}, {2,5}, {7,9}};
   printVIntervals(test1);
   printVIntervals(A.merge(test1));
+  cout<<"*********************************"<<endl;
+
+  std::vector<Interval> test2 = {{1,3}, {7,9}};
+  printVIntervals(test2);
+  printVIntervals(A.merge(test2));
+  cout<<"*********************************"<<endl;
+
+  std::vector<Interval> test3 = {{1,3}};
+  printVIntervals(test3);
+  printVIntervals(A.merge(test3));
+  cout<<"*********************************"<<endl;
 
   return 0;
 }
