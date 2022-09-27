@@ -77,7 +77,7 @@ void printVIntervals(std::vector<Interval> v) {
 
 int main() {
   MergeIntervals A;
-  std::vector<Interval> test1 = {{1,3}, {2,5}, {7,9}};
+  std::vector<Interval> test1 = {{7,9}, {1,3}, {2,5}};
   printVIntervals(test1);
   printVIntervals(A.merge(test1));
   cout<<"*********************************"<<endl;
