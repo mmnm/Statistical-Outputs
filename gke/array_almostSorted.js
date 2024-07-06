@@ -25,7 +25,25 @@ var insertionSort = function(sub_arr) {
 
 		var curElem = sub_arr[i];
 		var j = 0;
+var insertionSort = function(array) {
+  for (var i = 1; i < array.length; i++) {
+    var x = array[i];
+    console.log("x is " + x + " i is " + i);
+    var j;
+    for (j = i - 1; j >= 0 && array[j] > x; j--) {
+      console.log("j is " + j);
+      array[j + 1] = array[j];
+    }
+    array[j + 1] = x;
+  }
+  return array;
+};
+// Insertion sort 
 
+// Algo Have two for loops (i, j)
+// At each step place the jth element in the correct order
+
+// This algo works well if the elements are almost sorted and / or if each elem is
 		for(j = i - 1;; j--) {
 			
 			if(j < 0) {
